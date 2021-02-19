@@ -3,6 +3,7 @@ import {Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { fb, google, logo } from '../../assets';
 import normalize from 'react-native-normalize';
 import { Body, Button, CheckBox, ListItem } from 'native-base';
+import RegistrasiAll from "../../services/regist.service";
 
 class Register extends Component {
     constructor(props) {
@@ -14,7 +15,8 @@ class Register extends Component {
             ponsel:'',
             isSelected:false,
             isSelectPass:false,
-            showPass: true
+            showPass: true,
+            submitted: false
          };
          this.handleEmail = this.handleEmail.bind(this);
          this.handleName = this.handleName.bind(this);
@@ -22,6 +24,8 @@ class Register extends Component {
          this.handlePonsel = this.handlePonsel.bind(this);
          this.showthePass = this.showthePass.bind(this);
          this.toggleCheck = this.toggleCheck.bind(this);
+         this.saveData = this.saveData.bind(this);
+         this.newData = this.newData.bind(this);
     }
 
     handleEmail = (event) => {
@@ -44,9 +48,55 @@ class Register extends Component {
     showthePass = () => {
         this.setState({showPass: !this.state.showPass, isSelectPass: !this.state.isSelectPass})
     }
+
+    saveData(){
+        var data = {
+            name: this.state.name,
+            ponsel: this.state.ponsel,
+            email: this.state.email,
+            password: this.state.password
+        };
+
+        RegistrasiAll.createData(data)
+            .then(res => {
+                this.setState({
+                    id: res.data.id,
+                    name: res.data.name,
+                    ponsel: res.data.ponsel,
+                    email: res.data.email,
+                    password: res.data.password,
+
+                    submitted: true
+                });
+                console.log(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
+
+    newData(){
+        this.setState({
+            id:null,
+            name:'',
+            ponsel:'',
+            email:'',
+            password:'',
+
+            submitted: false
+        })
+    }
     render() {
         return (
             <View style={{padding:normalize(50), paddingTop:normalize(150)}}>
+                {this.state.submitted ? (
+                    <View>
+                        <Text>Success Registrasi</Text>
+                        <Button full rounded primary onPress={this.newData}>
+                            <Text>Add</Text>
+                        </Button>
+                    </View>
+                ) : (
                 <View style={{alignItems:'center', justifyContent:'center'}}>
                     <Image source={logo} style={{height:normalize(150), width:normalize(150)}} />
                     <View style={{paddingTop:normalize(20)}}>
@@ -133,7 +183,7 @@ class Register extends Component {
                             </ListItem>
                         </View>
                         <View style={{paddingTop:normalize(10), paddingLeft:normalize(40), paddingRight:normalize(40)}}>
-                            <Button full rounded primary style={{backgroundColor:'#299BD7', height:normalize(35)}} >
+                            <Button full rounded primary style={{backgroundColor:'#299BD7', height:normalize(35)}} onPress={this.saveData} >
                                 <Text style={{fontSize:normalize(20), color:'white'}}>Daftar</Text>
                             </Button>
                         </View>
@@ -143,6 +193,7 @@ class Register extends Component {
                         </View>
                     </View>
                 </View>
+                )}
             </View>
         );
     }
