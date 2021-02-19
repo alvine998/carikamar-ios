@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import {Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { fb, google, logo } from '../../assets';
 import normalize from 'react-native-normalize';
-import { Button } from 'native-base';
-import CheckBox from '@react-native-community/checkbox';
+import { Body, Button, CheckBox, ListItem } from 'native-base';
 
 class Register extends Component {
     constructor(props) {
@@ -14,6 +13,7 @@ class Register extends Component {
             name:'',
             ponsel:'',
             isSelected:false,
+            isSelectPass:false,
             showPass: true
          };
          this.handleEmail = this.handleEmail.bind(this);
@@ -42,7 +42,7 @@ class Register extends Component {
     }
 
     showthePass = () => {
-        this.setState({showPass: !this.state.showPass})
+        this.setState({showPass: !this.state.showPass, isSelectPass: !this.state.isSelectPass})
     }
     render() {
         return (
@@ -104,7 +104,7 @@ class Register extends Component {
                             placeholder="Password"
                             value={this.state.password}
                             onChange={this.handlePass}
-                            secureTextEntry={true}
+                            secureTextEntry={this.state.showPass}
                             style={{
                                 borderWidth:1,
                                 borderRadius:40,
@@ -116,11 +116,30 @@ class Register extends Component {
                                 paddingLeft:normalize(15)
                             }}
                         />
-                        <View style={{paddingTop:normalize(10), flexDirection:'row'}}>
-                            <CheckBox
-                                value={this.state.isSelected}
-                                onValueChange={this.toggleCheck}
-                            />
+                        <View style={{paddingTop:normalize(10)}}>
+                            <ListItem>
+                                <CheckBox checked={this.state.isSelectPass} onPress={this.showthePass} />
+                                <Body style={{paddingLeft:normalize(5)}}>
+                                    <Text style={{fontSize:normalize(10), textAlign:'left'}}> Lihat Password</Text>
+                                </Body>
+                            </ListItem>
+                        </View>
+                        <View style={{paddingTop:normalize(0)}}>
+                            <ListItem>
+                                <CheckBox checked={this.state.isSelected} onPress={this.toggleCheck} />
+                                <Body style={{paddingLeft:normalize(5)}}>
+                                    <Text style={{fontSize:normalize(10), textAlign:'left'}}> Saya setuju menerima syarat & ketentuan yang berlaku</Text>
+                                </Body>
+                            </ListItem>
+                        </View>
+                        <View style={{paddingTop:normalize(10), paddingLeft:normalize(40), paddingRight:normalize(40)}}>
+                            <Button full rounded primary style={{backgroundColor:'#299BD7', height:normalize(35)}} >
+                                <Text style={{fontSize:normalize(20), color:'white'}}>Daftar</Text>
+                            </Button>
+                        </View>
+                        <View style={{paddingTop:normalize(10), flexDirection:'row', paddingLeft:normalize(20), paddingRight:normalize(20)}}>
+                            <Text style={{fontSize:normalize(15)}}>Sudah punya akun?</Text> 
+                            <Text style={{fontSize:normalize(15), color:'#299BD7'}}> Masuk disini</Text>
                         </View>
                     </View>
                 </View>

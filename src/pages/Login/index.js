@@ -51,7 +51,7 @@ class Login extends Component {
                         <Text style={{color:'#299BD7', fontSize:normalize(15), textAlign:'center'}}>Lupa Password?</Text>
                         <View style={{paddingLeft:normalize(40), paddingRight:normalize(40), paddingTop:normalize(15)}}>
                             <Button full rounded primary style={{backgroundColor:'#299BD7', height:normalize(35)}}>
-                                <Text style={{color:'white', fontSize:normalize(18)}}>Masuk</Text>
+                                <Text style={{color:'white', fontSize:normalize(20)}}>Masuk</Text>
                             </Button>
                         </View>
                         <View style={{paddingTop:normalize(10), flexDirection:'row', paddingLeft:normalize(20), paddingRight:normalize(20)}}>
