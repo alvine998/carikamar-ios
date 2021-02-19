@@ -1,0 +1,12 @@
+{
+  "name": "carikamar-ios",
+  "displayName": "carikamar-ios",
+  "expo": {
+    "name": "carikamar-ios",
+    "slug": "carikamar-ios",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
