@@ -1,13 +1,14 @@
-import http from '../http-common';
+import axios from "axios";
+import http from "../http-common";
 
 class RegistrasiAll {
-    getAll(){
-        return http.get("/registrasi");
-    }
+  getAll() {
+    return axios.get("/registrasi");
+  }
 
-    createData(data){
-        return http.post("/registrasi", data);
-    }
+  createData(data) {
+    return axios.post(http + "/registrasi", data);
+  }
 }
 
 export default new RegistrasiAll();

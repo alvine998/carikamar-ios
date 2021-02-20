@@ -4,6 +4,8 @@ import { fb, google, logo } from '../../assets';
 import normalize from 'react-native-normalize';
 import { Body, Button, CheckBox, ListItem } from 'native-base';
 import RegistrasiAll from "../../services/regist.service";
+import axios from 'axios';
+import httpCommon from '../../http-common';
 
 class Register extends Component {
     constructor(props) {
@@ -29,16 +31,16 @@ class Register extends Component {
     }
 
     handleEmail = (event) => {
-        this.setState({email: event.target.email})
+        this.setState({email: event})
     }
     handlePass = (event) => {
-        this.setState({password: event.target.password})
+        this.setState({password: event})
     }
     handleName = (event) => {
-        this.setState({name: event.target.name})
+        this.setState({name: event})
     }
     handlePonsel = (event) => {
-        this.setState({ponsel: event.target.ponsel})
+        this.setState({ponsel: event})
     }
 
     toggleCheck = () => {
@@ -56,23 +58,26 @@ class Register extends Component {
             email: this.state.email,
             password: this.state.password
         };
+        console.log(data);
 
-        RegistrasiAll.createData(data)
-            .then(res => {
-                this.setState({
-                    id: res.data.id,
-                    name: res.data.name,
-                    ponsel: res.data.ponsel,
-                    email: res.data.email,
-                    password: res.data.password,
+      
 
-                    submitted: true
-                });
-                console.log(res.data);
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        // RegistrasiAll.createData(data)
+        //     .then(res => {
+        //         this.setState({
+        //             id: res.data.id,
+        //             name: res.data.name,
+        //             ponsel: res.data.ponsel,
+        //             email: res.data.email,
+        //             password: res.data.password,
+
+        //             submitted: true
+        //         });
+        //         console.log(res.data);
+        //     })
+        //     .catch(err => {
+        //         console.log(err);
+        //     });
     }
 
     newData(){
@@ -102,6 +107,7 @@ class Register extends Component {
                     <View style={{paddingTop:normalize(20)}}>
                         <TextInput
                             placeholder="Nama Lengkap"
+                            
                             value={this.state.name}
                             onChange={this.handleName}
                             style={{
