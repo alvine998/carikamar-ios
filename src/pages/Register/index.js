@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import {Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import {Image, Text, TextInput, TouchableOpacity, View , Alert } from 'react-native';
 import { fb, google, logo } from '../../assets';
 import normalize from 'react-native-normalize';
 import { Body, Button, CheckBox, ListItem } from 'native-base';
 import RegistrasiAll from "../../services/regist.service";
 import axios from 'axios';
 import httpCommon from '../../http-common';
+import { bindActionCreators } from 'redux';
+import { connect, connectAdvanced } from 'react-redux';
+//import action to fetch api
+import {regist} from '../../actions'
 
 class Register extends Component {
     constructor(props) {
@@ -29,6 +33,43 @@ class Register extends Component {
          this.saveData = this.saveData.bind(this);
          this.newData = this.newData.bind(this);
     }
+  
+    componentDidMount = async () => {
+   
+    }
+
+    componentDidUpdate = async (prevProps, prevState) => {
+        const { registResult, registError } = this.props;
+
+        if ( registResult !== null && prevProps.registResult !== registResult
+        ) {
+            console.log("registResult from didUpdate", registResult)
+            Alert.alert(
+                "Success",
+                "Success Registration User",
+                [
+                  {
+                    text: "Cancel",
+                    onPress: () => console.log("Cancel Pressed"),
+                    style: "cancel"
+                  },
+                  { text: "OK", onPress: () => console.log("OK Pressed") }
+                ],
+                { cancelable: false }
+              );
+        }
+
+        if (
+            registError !== null &&
+            prevProps.registError !== registError
+        ) {
+            console.log("registError from didUpdate ", registError)
+        }
+
+       
+    }
+
+ 
 
     handleEmail = (event) => {
         this.setState({email: event})
@@ -51,34 +92,16 @@ class Register extends Component {
         this.setState({showPass: !this.state.showPass, isSelectPass: !this.state.isSelectPass})
     }
 
-    saveData(){
-        var data = {
-            name: this.state.name,
-            ponsel: this.state.ponsel,
-            email: this.state.email,
-            password: this.state.password
-        };
-        console.log(data);
-
-      
-
-        // RegistrasiAll.createData(data)
-        //     .then(res => {
-        //         this.setState({
-        //             id: res.data.id,
-        //             name: res.data.name,
-        //             ponsel: res.data.ponsel,
-        //             email: res.data.email,
-        //             password: res.data.password,
-
-        //             submitted: true
-        //         });
-        //         console.log(res.data);
-        //     })
-        //     .catch(err => {
-        //         console.log(err);
-        //     });
+    saveData = () => {
+     const {regist} = this.props;
+        regist({
+            name: "Fadhil",
+            ponsel: "234234",
+            email: "fadhil@yahoo.co.id",
+            password: "Rahasia",
+        })
     }
+
 
     newData(){
         this.setState({
@@ -87,13 +110,12 @@ class Register extends Component {
             ponsel:'',
             email:'',
             password:'',
-
             submitted: false
         })
     }
     render() {
         return (
-            <View style={{padding:normalize(50), paddingTop:normalize(150)}}>
+            <View style={{padding:normalize(50), paddingTop:normalize(100)}}>
                 {this.state.submitted ? (
                     <View>
                         <Text>Success Registrasi</Text>
@@ -205,4 +227,21 @@ class Register extends Component {
     }
 }
 
-export default Register;
+function mapStateToProps(state) {
+    return{
+        registResult: state.regist.result,
+        registError: state.regist.error,
+    }
+}
+
+function matchDispatchToProps(dispatch){
+    return bindActionCreators(
+        {
+          regist,
+        },
+        dispatch,
+    )
+}
+
+
+export default connect(mapStateToProps, matchDispatchToProps) (Register);
