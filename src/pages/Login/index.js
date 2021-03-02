@@ -15,7 +15,7 @@ class Login extends Component {
     }
     render() {
         return (
-            <View style={{padding:normalize(50), paddingTop:normalize(150)}}>
+            <View style={{padding:normalize(50), paddingTop:normalize(80)}}>
                 <View style={{alignItems:'center', justifyContent:'center'}}>
                     <Image source={logo} style={{height:normalize(150), width:normalize(150)}} />
                     <View style={{paddingTop:normalize(20)}}>
@@ -54,7 +54,7 @@ class Login extends Component {
                                 <Text style={{color:'white', fontSize:normalize(20)}}>Masuk</Text>
                             </Button>
                         </View>
-                        <View style={{paddingTop:normalize(10), flexDirection:'row', paddingLeft:normalize(20), paddingRight:normalize(20)}}>
+                        <View style={{paddingTop:normalize(10), flexDirection:'row', paddingLeft:normalize(30), paddingRight:normalize(20)}}>
                             <Text style={{fontSize:normalize(15)}}>Belum punya akun?</Text> 
                             <Text style={{fontSize:normalize(15), color:'#299BD7'}}> Daftar disini</Text>
                         </View>
