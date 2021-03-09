@@ -1,0 +1,51 @@
+import { StyleSheet } from "react-native";
+import normalize from "react-native-normalize";
+
+export const styles = StyleSheet.create ({
+    centered:{
+        alignItems:'center',
+        justifyContent:'center',
+        marginTop:normalize(20)
+    },
+    border:{
+        borderWidth:1,
+        borderColor:'#dfdfdf',
+        height:normalize(50),
+        borderRadius:10,
+        backgroundColor:'#dfdfdf',
+        color:'black'
+    },
+    border2:{
+        borderWidth:1,
+        borderColor:'#dfdfdf',
+        height:normalize(50),
+        width:normalize(150),
+        borderRadius:10,
+        color:'black',
+        paddingLeft:normalize(20),
+        backgroundColor:'#dfdfdf'
+    },
+    btnInside:{
+        backgroundColor:'#299BD7',
+        width:normalize(200),
+        height:normalize(50)
+    },
+    btnContainer:{
+        paddingTop:normalize(20)
+    },
+    field:{
+        height:normalize(100),
+        backgroundColor:'#FAF183',
+    },
+    image:{
+        height:normalize(150),
+        width:normalize(150)
+    },
+    fieldText:{
+        textAlign:'justify',
+        color:'black',
+        paddingRight:normalize(20),
+        paddingLeft:normalize(20),
+        paddingTop:normalize(20)
+    }
+})
