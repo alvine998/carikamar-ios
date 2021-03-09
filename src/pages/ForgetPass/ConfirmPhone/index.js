@@ -8,8 +8,17 @@ import { styles } from './styles';
 class ConfirmPhone extends Component {
     constructor(props) {
         super(props);
-        this.state = {  };
+        this.state = { 
+            phone:''
+         };
+
+         this.handlePhone = this.handlePhone.bind(this);
     }
+
+    handlePhone = (event) => {
+        this.setState({phone: event})
+    }
+
     render() {
         return (
             <View>
@@ -44,9 +53,12 @@ class ConfirmPhone extends Component {
                             <TextInput
                                 editable={true}
                                 maxLength={12}
+                                value={this.state.phone}
+                                onChange={this.handlePhone}
                                 style={styles.border2}
                             />
                         </View>
+                        <Text style={{color:'#299BD7', fontSize:normalize(15), paddingTop:normalize(10)}}>Gunakan cara lain</Text>
                         <View style={styles.btnContainer}>
                             <Button full rounded transparent style={styles.btnInside}>
                                 <Text style={{color:'white'}}>Kirim</Text>
