@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import {Image, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { fb, google, logo } from '../../assets';
 import normalize from 'react-native-normalize';
 import { Body, Button, CheckBox, ListItem } from 'native-base';
@@ -89,6 +89,7 @@ class Register extends Component {
     }
     render() {
         return (
+            <ScrollView>
             <View style={{padding:normalize(50), paddingTop:normalize(150)}}>
                 {this.state.submitted ? (
                     <View>
@@ -196,6 +197,7 @@ class Register extends Component {
                 </View>
                 )}
             </View>
+            </ScrollView>
         );
     }
 }

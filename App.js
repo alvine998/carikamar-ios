@@ -9,9 +9,11 @@ import Login from './src/pages/Login';
 import Register from './src/pages/Register';
 import {createStackNavigator} from '@react-navigation/stack';
 import ResetPass from './src/pages/ForgetPass/ResetPass';
+import HomeScreen from './src/pages/Home';
+import { BotNav } from './src/components/BotNav';
 
 export default function App() {
-  const Stack = createStackNavigator();
+  // const Stack = createStackNavigator();
   return (
     // <NavigationContainer>
     //   <Stack.Navigator>
@@ -22,8 +24,6 @@ export default function App() {
     //     <Stack.Screen name="VerifyEmail" component={VerifyEmail}/>
     //   </Stack.Navigator>
     // </NavigationContainer>
-    <View>
-      <ResetPass/>
-    </View>
+      <BotNav/>
   );
 }
