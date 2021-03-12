@@ -7,12 +7,12 @@ import { NavigationContainer } from "@react-navigation/native";
 import Booking from "../../pages/Hotel/Booking";
 import normalize from "react-native-normalize";
 import Communicate from "../../pages/Communicate";
+import { useEffect } from "react";
 
 const Tab = createMaterialBottomTabNavigator();
 
 export function BotNav() {
   return (
-    <NavigationContainer>
       <Tab.Navigator
         initialRouteName="Home"
         activeColor="#f0edf6"
@@ -20,7 +20,7 @@ export function BotNav() {
         barStyle={{ backgroundColor: "#299BD7" }}
       >
         <Tab.Screen
-          name="Home"
+          name="HomeScreen"
           component={HomeScreen}
           options={{
             tabBarLabel: "Beranda",
@@ -50,7 +50,7 @@ export function BotNav() {
           }}
         />
          <Tab.Screen
-          name="Hubungi"
+          name="Communicate"
           component={Communicate}
           options={{
             tabBarLabel: "Hubungi",
@@ -65,7 +65,7 @@ export function BotNav() {
           }}
         />
         <Tab.Screen
-          name="Akun"
+          name="UserAccount"
           component={UserAccount}
           options={{
             tabBarLabel: "Akun",
@@ -80,6 +80,5 @@ export function BotNav() {
           }}
         />
       </Tab.Navigator>
-    </NavigationContainer>
   );
 }

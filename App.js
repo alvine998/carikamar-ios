@@ -11,9 +11,11 @@ import {createStackNavigator} from '@react-navigation/stack';
 import ResetPass from './src/pages/ForgetPass/ResetPass';
 import HomeScreen from './src/pages/Home';
 import { BotNav } from './src/components/BotNav';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 
 export default function App() {
-  // const Stack = createStackNavigator();
+  const Stack = createStackNavigator();
+  const Drawer = createDrawerNavigator();
   return (
     // <NavigationContainer>
     //   <Stack.Navigator>
@@ -24,6 +26,10 @@ export default function App() {
     //     <Stack.Screen name="VerifyEmail" component={VerifyEmail}/>
     //   </Stack.Navigator>
     // </NavigationContainer>
-      <BotNav/>
-  );
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="HomeScreen">
+        <Drawer.Screen name="HomeScreen" component={BotNav}/>
+      </Drawer.Navigator>
+    </NavigationContainer>
+    );
 }

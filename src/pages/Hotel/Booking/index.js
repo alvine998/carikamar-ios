@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, Text, View } from 'react-native';
 
 class Booking extends Component {
     constructor(props) {
@@ -9,7 +9,9 @@ class Booking extends Component {
     render() {
         return (
             <SafeAreaView>
-
+                <View>
+                    <Text>Hello Booking</Text>
+                </View>
             </SafeAreaView>
         );
     }

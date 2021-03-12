@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, Text, View } from 'react-native';
 
 class Communicate extends Component {
     constructor(props) {
@@ -9,7 +9,9 @@ class Communicate extends Component {
     render() {
         return (
             <SafeAreaView>
-
+                <View>
+                    <Text>Hello Comm</Text>
+                </View>
             </SafeAreaView>
         );
     }
