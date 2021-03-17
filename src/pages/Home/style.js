@@ -24,8 +24,7 @@ export const styles = StyleSheet.create({
         alignItems:'center',
     },
     positionsImg:{
-        alignItems:'flex-end',
-        marginTop:normalize(100),
-        paddingRight:normalize(30)
+        alignItems:'center',
+        marginTop:normalize(-100),
     }
 })

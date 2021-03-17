@@ -15,16 +15,16 @@ class Login extends Component {
     }
     render() {
         return (
-            <View style={{padding:normalize(50), paddingTop:normalize(80)}}>
+            <View style={{paddingTop:normalize(100)}}>
                 <View style={{alignItems:'center', justifyContent:'center'}}>
-                    <Image source={logo} style={{height:normalize(150), width:normalize(150)}} />
+                    <Image source={logo} style={{height:normalize(150), width:normalize(150), alignItems:'center'}} />
                     <View style={{paddingTop:normalize(20)}}>
                         <TextInput
                             placeholder="Email atau No Ponsel"
                             style={{
                                 borderWidth:1,
                                 borderRadius:40,
-                                width:normalize(250),
+                                width:normalize(300),
                                 borderColor:'white',
                                 backgroundColor:'#dfdfdf',
                                 fontSize:normalize(17),
@@ -39,7 +39,7 @@ class Login extends Component {
                             style={{
                                 borderWidth:1,
                                 borderRadius:40,
-                                width:normalize(250),
+                                width:normalize(300),
                                 borderColor:'white',
                                 backgroundColor:'#dfdfdf',
                                 fontSize:normalize(17),
@@ -49,7 +49,7 @@ class Login extends Component {
                         />
                         <View style={{paddingTop:normalize(10)}}/>
                         <Text style={{color:'#299BD7', fontSize:normalize(15), textAlign:'center'}}>Lupa Password?</Text>
-                        <View style={{paddingLeft:normalize(40), paddingRight:normalize(40), paddingTop:normalize(15)}}>
+                        <View style={{paddingTop:normalize(15), alignItems:'center', justifyContent:'center'}}>
                             <Button full rounded primary style={{backgroundColor:'#299BD7', height:normalize(35)}}>
                                 <Text style={{color:'white', fontSize:normalize(20)}}>Masuk</Text>
                             </Button>
@@ -62,7 +62,7 @@ class Login extends Component {
                             <Text style={{fontSize:normalize(15), textAlign:'center'}}>Atau</Text>
                         </View>
                         <View style={{flexDirection:'row', paddingTop:normalize(10)}}>
-                            <TouchableOpacity style={{paddingLeft:normalize(55)}}>
+                            <TouchableOpacity style={{paddingLeft:normalize(75)}}>
                                 <Image source={fb} style={{width:normalize(50), height:normalize(50)}} />
                             </TouchableOpacity>
                             <TouchableOpacity style={{paddingLeft:normalize(50)}}>

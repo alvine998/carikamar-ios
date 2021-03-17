@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
     field:{
         height:normalize(100),
         backgroundColor:'#FAF183',
-        paddingBottom:normalize(20)
     },
     center:{
         alignItems:'center',
@@ -33,7 +32,7 @@ export const styles = StyleSheet.create({
     },
     fieldText:{
         color:'black',
-        fontSize:normalize(18),
+        fontSize:normalize(15),
         justifyContent:'center',
         textAlign:'justify',
         paddingRight:normalize(20),

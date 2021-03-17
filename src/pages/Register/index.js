@@ -90,7 +90,7 @@ class Register extends Component {
     render() {
         return (
             <ScrollView>
-            <View style={{padding:normalize(50), paddingTop:normalize(150)}}>
+            <View style={{padding:normalize(50), paddingTop:normalize(100)}}>
                 {this.state.submitted ? (
                     <View>
                         <Text>Success Registrasi</Text>

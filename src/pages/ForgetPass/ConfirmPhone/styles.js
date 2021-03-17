@@ -11,7 +11,9 @@ export const styles = StyleSheet.create ({
         borderWidth:1,
         borderColor:'#dfdfdf',
         height:normalize(50),
+        width:normalize(50),
         borderRadius:10,
+        alignItems:'center',
         backgroundColor:'#dfdfdf',
         color:'black'
     },
@@ -21,6 +23,7 @@ export const styles = StyleSheet.create ({
         height:normalize(50),
         width:normalize(150),
         borderRadius:10,
+        textAlign:'center',
         color:'black',
         paddingLeft:normalize(20),
         backgroundColor:'#dfdfdf'

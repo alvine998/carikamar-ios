@@ -18,7 +18,7 @@ export default function App() {
   const Drawer = createDrawerNavigator();
   return (
     // <NavigationContainer>
-    //   <Stack.Navigator>
+    //   <Stack.Navigator initialRouteName={HomeScreen}>
     //     <Stack.Screen name="Login" component={Login} />
     //     <Stack.Screen name="Register" component={Register}/>
     //     <Stack.Screen name="ConfirmEmail" component={ConfirmEmail}/>
@@ -31,5 +31,8 @@ export default function App() {
         <Drawer.Screen name="HomeScreen" component={BotNav}/>
       </Drawer.Navigator>
     </NavigationContainer>
+    // <View>
+    //   <Login/>
+    // </View>
     );
 }
