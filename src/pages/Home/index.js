@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/core";
 import {
   Body,
   Container,
@@ -24,12 +25,13 @@ import { BotNav } from "../../components/BotNav";
 import Sidebar from "../../components/Sidebar";
 import { styles } from "./style";
 
-class HomeScreen extends Component {
+class HomeScreen extends Component  {
   constructor(props) {
     super(props);
     this.state = {};
   }
   render() {
+    const {navigation} = this.props;
     return (
       <SafeAreaView>
         <Header transparent>
@@ -38,6 +40,7 @@ class HomeScreen extends Component {
               type="FontAwesome5"
               name="bars"
               style={{ color: "#299BD7" }}
+              onPress={() => this.props.navigation.openDrawer()}
             />
           </Left>
           <Body>

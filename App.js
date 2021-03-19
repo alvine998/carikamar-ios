@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import ConfirmEmail from './src/pages/ForgetPass/ConfirmEmail';
 import ConfirmPhone from './src/pages/ForgetPass/ConfirmPhone';
 import VerifyEmail from './src/pages/ForgetPass/VerifyEmail';
@@ -12,6 +12,11 @@ import ResetPass from './src/pages/ForgetPass/ResetPass';
 import HomeScreen from './src/pages/Home';
 import { BotNav } from './src/components/BotNav';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import BucketList from './src/pages/Bucket/BucketList';
+import SideBar from './src/components/Sidebar';
+import UserAccount from './src/pages/Account/UserAccount';
+import normalize from 'react-native-normalize';
+import BucketKoleksi from './src/pages/Bucket/BucketKoleksi';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -26,13 +31,14 @@ export default function App() {
     //     <Stack.Screen name="VerifyEmail" component={VerifyEmail}/>
     //   </Stack.Navigator>
     // </NavigationContainer>
-    <NavigationContainer>
-      <Drawer.Navigator initialRouteName="HomeScreen">
-        <Drawer.Screen name="HomeScreen" component={BotNav}/>
-      </Drawer.Navigator>
-    </NavigationContainer>
-    // <View>
-    //   <Login/>
-    // </View>
+    // <NavigationContainer>
+    //   <Drawer.Navigator initialRouteName="HomeScreen" drawerContent={(props) => <SideBar {...props}/>}>
+    //     <Drawer.Screen name="Home" component={BotNav}/>
+    //     <Drawer.Screen name="Bitbucket" component={UserAccount}/>
+    //   </Drawer.Navigator>
+    // </NavigationContainer>
+    <View>
+      <BucketKoleksi/>
+    </View>
     );
 }

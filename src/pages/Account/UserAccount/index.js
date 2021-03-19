@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import normalize from "react-native-normalize";
 import { avva } from "../../../assets";
+import { BotNav } from "../../../components/BotNav";
 import { styles } from "./style";
 
 class UserAccount extends Component {
@@ -67,14 +68,18 @@ class UserAccount extends Component {
                 <View>
                   <Text style={{lineHeight:20}}>Basic Silver 6000 Points{"\n"}Tukarkan poin kamu dengan voucher{"\n"}Pelajari lebih lanjut</Text>
                 </View>
-                <Icon type={"FontAwesome5"} name="chevron-right" style={{marginLeft:normalize(20), marginTop:normalize(20)}} />
+                <Right>
+                  <Icon type={"FontAwesome5"} name="chevron-right" style={{marginTop:normalize(20)}} />
+                </Right>
               </TouchableOpacity>
               <View style={{paddingTop:normalize(20)}}/>
               <TouchableOpacity style={{ flexDirection: "row" }}>
                 <View>
                   <Text style={{lineHeight:20}}>Voucher Saya {"\n"}Ayo gunakan voucher kamu dan {"\n"}gunakan untuk liburan selanjutnya. </Text>
                 </View>
-                <Icon type={"FontAwesome5"} name="chevron-right" style={{marginLeft:normalize(25), marginTop:normalize(20)}} />
+                <Right>
+                  <Icon type={"FontAwesome5"} name="chevron-right" style={{marginTop:normalize(20)}} />
+                </Right>
               </TouchableOpacity>
               <View style={{paddingTop:normalize(20)}}/>
               <TouchableOpacity style={{ flexDirection: "row" }}>
@@ -86,10 +91,13 @@ class UserAccount extends Component {
                   dan harga khusus
                   </Text>
                 </View>
-                <Icon type={"FontAwesome5"} name="chevron-right" style={{marginLeft:normalize(20), marginTop:normalize(20)}} />
+                <Right>
+                  <Icon type={"FontAwesome5"} name="chevron-right" style={{marginTop:normalize(20)}} />
+                </Right>
               </TouchableOpacity>
             </View>
           </Card>
+          <BotNav/>
         </View>
       </SafeAreaView>
     );
