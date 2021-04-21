@@ -11,20 +11,55 @@ export const styles = StyleSheet.create({
         width:normalize(100)
     },
     borderimg:{
-        borderWidth:1,
-        borderRadius:30,
+        height:normalize(200),
+        width:normalize(400)
+    },
+    backwhite:{
+        height:normalize(1500),
+    },
+    imgcontain:{
+        width:normalize(70),
         height:normalize(100),
-        width:normalize(120),
-        alignItems:'center',
-        justifyContent:'center',
-        backgroundColor:'#299BD7',
-        borderColor:'#299BD7'
+    },
+    headerImg:{
+        height:normalize(35),
+        width:normalize(150)
+    },
+    rounder:{
+        height:normalize(30),
+        width:normalize(30),
+        borderWidth:1,
+        borderRadius:10
     },
     positions:{
         alignItems:'center',
     },
     positionsImg:{
         alignItems:'center',
-        marginTop:normalize(-100),
+        marginTop:normalize(-50),
+    },
+    borderhotel:{
+        alignItems:'center',
+        borderWidth:1,
+        backgroundColor:'#299BD7',
+        borderRadius:20,
+        borderColor:'white',
+        width:normalize(100),
+        height:normalize(100),
+    },
+    yellowborder:{
+        height:normalize(50),
+        backgroundColor:'#F1C676',
+        marginTop:normalize(20),
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    borderHo:{
+        borderWidth:1,
+        backgroundColor:'#dfdfdf',
+        width:normalize(170),
+        height:normalize(100),
+        borderRadius:20,
     }
 })

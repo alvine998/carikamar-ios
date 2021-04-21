@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import {
   Image,
   SafeAreaView,
+  ScrollView,
   Text,
   TouchableHighlight,
   TouchableOpacity,
@@ -20,10 +21,10 @@ class UserAccount extends Component {
   }
   render() {
     return (
-      <SafeAreaView>
+      <ScrollView>
         <Header transparent>
           <Left>
-            <Text>Akun</Text>
+            <Text style={{color:'black'}}>Akun</Text>
           </Left>
           <Body />
           <Right>
@@ -43,8 +44,8 @@ class UserAccount extends Component {
               <View
                 style={{ padding: normalize(10), marginLeft: normalize(20) }}
               >
-                <Text>Aril Boril</Text>
-                <Text>Basic Silver | 6000 Points</Text>
+                <Text style={{color:'black'}}>Aril Boril</Text>
+                <Text style={{color:'black'}}>Basic Silver | 6000 Points</Text>
                 <Text style={{ color: "#299BD7" }}>Terverifikasi</Text>
                 <Icon
                   type={"FontAwesome5"}
@@ -58,15 +59,15 @@ class UserAccount extends Component {
               </View>
             </View>
           </Card>
-          <View style={{ paddingTop: normalize(20) }} />
+          <View style={{ paddingTop: normalize(10) }} />
         </View>
-        <Text style={{ paddingLeft: normalize(20) }}>Special untuk kamu</Text>
+        <Text style={{ paddingLeft: normalize(40), color:'black' }}>Special untuk kamu</Text>
         <View style={styles.center}>
-          <Card style={styles.cardContainer}>
+          <Card style={styles.cardContainer2}>
             <View style={{ padding: normalize(10) }}>
               <TouchableOpacity style={{ flexDirection: "row" }}>
                 <View>
-                  <Text style={{lineHeight:20}}>Basic Silver 6000 Points{"\n"}Tukarkan poin kamu dengan voucher{"\n"}Pelajari lebih lanjut</Text>
+                  <Text style={{lineHeight:20, color:'black'}}>Basic Silver 6000 Points{"\n"}Tukarkan poin kamu dengan voucher{"\n"}Pelajari lebih lanjut</Text>
                 </View>
                 <Right>
                   <Icon type={"FontAwesome5"} name="chevron-right" style={{marginTop:normalize(20)}} />
@@ -75,7 +76,7 @@ class UserAccount extends Component {
               <View style={{paddingTop:normalize(20)}}/>
               <TouchableOpacity style={{ flexDirection: "row" }}>
                 <View>
-                  <Text style={{lineHeight:20}}>Voucher Saya {"\n"}Ayo gunakan voucher kamu dan {"\n"}gunakan untuk liburan selanjutnya. </Text>
+                  <Text style={{lineHeight:20, color:'black'}}>Voucher Saya {"\n"}Ayo gunakan voucher kamu dan {"\n"}gunakan untuk liburan selanjutnya. </Text>
                 </View>
                 <Right>
                   <Icon type={"FontAwesome5"} name="chevron-right" style={{marginTop:normalize(20)}} />
@@ -84,7 +85,7 @@ class UserAccount extends Component {
               <View style={{paddingTop:normalize(20)}}/>
               <TouchableOpacity style={{ flexDirection: "row" }}>
                 <View>
-                  <Text style={{lineHeight:20}}>
+                  <Text style={{lineHeight:20, color:'black'}}>
                     Member Carikamar{"\n"}
                   Nikmati keuntungan dengan memiliki{"\n"}
                   member Carikamar mulai dari diskon{"\n"}
@@ -99,7 +100,7 @@ class UserAccount extends Component {
           </Card>
           <BotNav/>
         </View>
-      </SafeAreaView>
+      </ScrollView>
     );
   }
 }

@@ -7,7 +7,7 @@ import { logo } from '../../assets';
 const SideBar = (props) => {
     return(
         <SafeAreaView style={{flex:1}}>
-            <View style={{alignItems:'center', padding:normalize(20)}}>
+            <View style={{alignItems:'center', padding:normalize(20), marginTop:normalize(20)}}>
                 <Image source={logo} style={{width:normalize(100), height:normalize(100)}} />
             </View>
             <DrawerContentScrollView {...props}>

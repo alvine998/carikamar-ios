@@ -12,5 +12,6 @@ import bg2 from "./images/bg-2.jpg";
 import bg3 from "./images/bg-3.jpg";
 import bg4 from "./images/bg-4.jpg";
 import bg5 from "./images/bg-5.jpg";
+import header_logo from "./images/header_ckid.png";
 
-export { logo, fb, google, email, phone, reset, banner, hotel, avva, baks, bg2, bg3, bg4, bg5 };
+export { logo, header_logo, fb, google, email, phone, reset, banner, hotel, avva, baks, bg2, bg3, bg4, bg5 };

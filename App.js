@@ -31,14 +31,14 @@ export default function App() {
     //     <Stack.Screen name="VerifyEmail" component={VerifyEmail}/>
     //   </Stack.Navigator>
     // </NavigationContainer>
-    // <NavigationContainer>
-    //   <Drawer.Navigator initialRouteName="HomeScreen" drawerContent={(props) => <SideBar {...props}/>}>
-    //     <Drawer.Screen name="Home" component={BotNav}/>
-    //     <Drawer.Screen name="Bitbucket" component={UserAccount}/>
-    //   </Drawer.Navigator>
-    // </NavigationContainer>
-    <View>
-      <BucketKoleksi/>
-    </View>
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="HomeScreen" drawerContent={(props) => <SideBar {...props}/>}>
+        <Drawer.Screen name="Home" component={BotNav}/>
+        <Drawer.Screen name="Bitbucket" component={UserAccount}/>
+      </Drawer.Navigator>
+    </NavigationContainer>
+    // <View>
+    //   <BucketKoleksi/>
+    // </View>
     );
 }

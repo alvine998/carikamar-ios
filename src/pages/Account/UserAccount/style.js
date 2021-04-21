@@ -4,7 +4,7 @@ import normalize from "react-native-normalize";
 export const styles = StyleSheet.create({
     cardContainer:{
         width:normalize(350),
-        borderRadius:20
+        borderRadius:20,
     },
     center:{
         alignItems:'center'
@@ -20,5 +20,11 @@ export const styles = StyleSheet.create({
     imageContainer:{
         height:normalize(80),
         width:normalize(80)
-    }
+    },
+    cardContainer2:{
+        width:normalize(350),
+        borderRadius:10,
+        height:normalize(320),
+        justifyContent:'center'
+    },
 })
