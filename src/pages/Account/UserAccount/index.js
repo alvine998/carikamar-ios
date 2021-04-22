@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/core";
 import { Body, Card, Header, Icon, Left, Right } from "native-base";
 import React, { Component } from "react";
 import {
@@ -19,7 +20,10 @@ class UserAccount extends Component {
     super(props);
     this.state = {};
   }
+
+
   render() {
+    const {navigation} = this.props;
     return (
       <ScrollView>
         <Header transparent>
@@ -55,6 +59,7 @@ class UserAccount extends Component {
                     fontSize: normalize(22),
                     marginLeft: normalize(200),
                   }}
+                  onPress={() => navigation.navigate("My Profile")}
                 />
               </View>
             </View>

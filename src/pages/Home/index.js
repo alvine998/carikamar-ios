@@ -11,6 +11,7 @@ import {
 } from "native-base";
 import React, { Component } from "react";
 import {
+  BackHandler,
   Image,
   ImageBackground,
   SafeAreaView,
@@ -19,6 +20,10 @@ import {
   TouchableHighlight,
   TouchableOpacity,
   View,
+  Animated,
+  Alert,
+  Dimensions,
+  ToastAndroid,
 } from "react-native";
 import normalize from "react-native-normalize";
 import { avva, banner, header_logo, hotel, logo } from "../../assets";
@@ -26,12 +31,66 @@ import { BotNav } from "../../components/BotNav";
 import Sidebar from "../../components/Sidebar";
 import { styles } from "./style";
 
+let {width, height} = Dimensions.get('window');
+
 class HomeScreen extends Component  {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {backClickCount: 0};
+    this.springValue = new Animated.Value(100);
+    this.backAction = this.backAction.bind(this);
   }
+
+  _spring(){
+    this.setState({backClickCount: 1 }, () => {
+        Animated.sequence([
+            Animated.spring(
+                this.springValue, 
+                {
+                    toValue: -.15 * height,
+                    friction: 5,
+                    duration: 300,
+                    useNativeDriver: true,
+                }
+            ),
+            Animated.timing(
+                this.springValue,
+                {
+                    toValue: 100,
+                    duration: 300,
+                    useNativeDriver: true,
+                }
+            ),
+        ]).start(() => {
+            this.setState({backClickCount: 0});
+        });
+    });
+  }
+
+  backAction = () => {
+      setTimeout(() => {
+        this.setState({backClickCount: 0});
+      }, 2000);
+
+      if(this.state.backClickCount == 0){
+        this.setState({backClickCount: this.state.backClickCount + 1});
+        ToastAndroid.show("Tekan 2 kali untuk keluar!", ToastAndroid.SHORT);
+      } else {
+        BackHandler.exitApp()
+      }
+      return true;
+  }
+
+  componentDidMount(){
+    BackHandler.addEventListener("hardwareBackPress", this.backAction)
+  }
+
+  componentWillUnmount(){
+    BackHandler.removeEventListener("hardwareBackPress", this.backAction  )
+  }
+
   render() {
+
     const {navigation} = this.props;
     return (
       <SafeAreaView>
