@@ -9,7 +9,7 @@ import {
   TextInput,
 } from "react-native";
 import normalize from "react-native-normalize";
-import { Header, Left, Icon, Body, Right, Button } from "native-base";
+import { Header, Left, Icon, Body, Right, Button, Picker } from "native-base";
 import { bg4 } from "../../../assets";
 
 class BucketKoleksi extends Component {
@@ -18,7 +18,8 @@ class BucketKoleksi extends Component {
     this.state = {
         koleksi:'',
         deskripsi:'',
-        foto:''
+        foto:'',
+        selected: "key1"
     };
     this.handleKoleksi = this.handleKoleksi.bind(this);
     this.handleDeskripsi = this.handleDeskripsi.bind(this);
@@ -27,6 +28,10 @@ class BucketKoleksi extends Component {
 
   handleKoleksi = (event) => {
       this.setState({koleksi: event});
+  }
+
+  onValueChange = (event) => {
+    this.setState({selected: event})
   }
 
   handleDeskripsi = (event) => {
@@ -38,8 +43,8 @@ class BucketKoleksi extends Component {
   }
   render() {
     return (
-      <View>
-        <Header>
+      <ScrollView>
+        <Header transparent>
           <Left>
             <Icon
               type="FontAwesome5"
@@ -48,7 +53,7 @@ class BucketKoleksi extends Component {
             />
           </Left>
           <Body>
-            <Text>Buat Koleksi</Text>
+            <Text style={{color:'#299BD7'}}>Buat Koleksi</Text>
           </Body>
           <Right>
             <Icon
@@ -58,7 +63,7 @@ class BucketKoleksi extends Component {
             />
           </Right>
         </Header>
-        <ScrollView>
+        <View style={{paddingBottom:normalize(50)}}>
           <View style={{ backgroundColor: "white", height: normalize(250) }}>
             <Image
               source={bg4}
@@ -100,7 +105,7 @@ class BucketKoleksi extends Component {
                 style={{
                     borderWidth:1,
                     width:normalize(300),
-                    height:normalize(35),
+                    height:normalize(50),
                     borderRadius:5,
                     paddingLeft:normalize(10),
                     marginTop:normalize(10)
@@ -123,7 +128,7 @@ class BucketKoleksi extends Component {
                 style={{
                     borderWidth:1,
                     width:normalize(300),
-                    height:normalize(35),
+                    height:normalize(50),
                     borderRadius:5,
                     paddingLeft:normalize(10),
                     marginTop:normalize(10)
@@ -138,26 +143,30 @@ class BucketKoleksi extends Component {
               </View>
 
               <View style={{paddingTop:normalize(20)}} />
-              <Text>Kategori</Text>
+                <Text>Kategori</Text>
                 <View style={{paddingTop:normalize(20)}}>
-                    <View style={{flexDirection:'row'}}>
-                        <Button full transparent style={{borderWidth:1}}>
-                            <Text>Travel</Text>
-                        </Button>
-                        <Button full transparent style={{borderWidth:1}}>
-                            <Text>Work</Text>
-                        </Button>
-                        <Button full transparent style={{borderWidth:1}}>
-                            <Text>Love</Text>
-                        </Button>
-                        <Button full transparent style={{borderWidth:1}}>
-                            <Text>Other</Text>
-                        </Button>
-                    </View>
+                  <Picker
+                    note
+                    mode="dropdown"
+                    style={{width:normalize(200)}}
+                    selectedValue={this.state.selected}
+                    onValueChange={this.onValueChange.bind(this)}
+                  >
+                    <Picker.Item label="Travel" value="key0"/>
+                    <Picker.Item label="Work" value="key1"/>
+                    <Picker.Item label="Love" value="key2"/>
+                    <Picker.Item label="Lainnya" value="key3"/>
+                  </Picker>
                 </View>
-          </View>
-        </ScrollView>
-      </View>
+            </View>
+
+              <View style={{paddingTop:normalize(20), paddingLeft:normalize(50), paddingRight:normalize(50)}}>
+                  <Button full rounded transparent style={{backgroundColor:'#299BD7', height:normalize(40)}}>
+                    <Text>Simpan</Text>
+                  </Button>
+              </View>
+        </View>
+      </ScrollView>
     );
   }
 }

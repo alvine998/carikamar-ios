@@ -18,6 +18,8 @@ import UserAccount from './src/pages/Account/UserAccount';
 import normalize from 'react-native-normalize';
 import BucketKoleksi from './src/pages/Bucket/BucketKoleksi';
 import DataAccount from './src/pages/Account/DataAccount';
+import DetailKoleksi from './src/pages/Bucket/DetailKoleksi';
+import TambahItem from './src/pages/Bucket/TambahItem';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -32,15 +34,15 @@ export default function App() {
     //     <Stack.Screen name="VerifyEmail" component={VerifyEmail}/>
     //   </Stack.Navigator>
     // </NavigationContainer>
-    <NavigationContainer>
-      <Drawer.Navigator initialRouteName="HomeScreen" drawerContent={(props) => <SideBar {...props}/>}>
-        <Drawer.Screen name="Home" component={BotNav}/>
-        <Drawer.Screen name="Bitbucket" component={UserAccount}/>
-        <Drawer.Screen name="My Profile" component={DataAccount}/>
-      </Drawer.Navigator>
-    </NavigationContainer>
-    // <View>
-    //   <BucketKoleksi/>
-    // </View>
+    // <NavigationContainer>
+    //   <Drawer.Navigator initialRouteName="HomeScreen" drawerContent={(props) => <SideBar {...props}/>}>
+    //     <Drawer.Screen name="Home" component={BotNav}/>
+    //     <Drawer.Screen name="Bitbucket" component={UserAccount}/>
+    //     <Drawer.Screen name="My Profile" component={DataAccount}/>
+    //   </Drawer.Navigator>
+    // </NavigationContainer>
+    <View>
+      <TambahItem/>
+    </View>
     );
 }
