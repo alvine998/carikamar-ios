@@ -8,6 +8,7 @@ import Booking from "../../pages/Hotel/Booking";
 import normalize from "react-native-normalize";
 import Communicate from "../../pages/Communicate";
 import { useEffect } from "react";
+import Pesanan from "../../pages/Hotel/Booking";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -35,10 +36,10 @@ export function BotNav() {
           }}
         />
         <Tab.Screen
-          name="Booking"
-          component={Booking}
+          name="Pesanan"
+          component={Pesanan}
           options={{
-            tabBarLabel: "Booking",
+            tabBarLabel: "Pesanan",
             tabBarIcon: ({ color }) => (
               <Icon
                 type="FontAwesome5"

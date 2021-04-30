@@ -1,5 +1,7 @@
+import { Body, Header, Left, Right, Icon } from 'native-base';
 import React, { Component } from 'react';
-import { SafeAreaView, Text, View } from 'react-native';
+import { SafeAreaView, ScrollView, Text, View } from 'react-native';
+import normalize from 'react-native-normalize';
 
 class Communicate extends Component {
     constructor(props) {
@@ -8,11 +10,26 @@ class Communicate extends Component {
     }
     render() {
         return (
-            <SafeAreaView>
+            <ScrollView>
+                <Header transparent>
+                    <Left>
+                        <Text style={{color:'#299BD7', fontSize:normalize(20)}}>Pesanan</Text>
+                    </Left>
+                    <Body>
+
+                    </Body>
+                    <Right>
+                        <Icon
+                            type="FontAwesome5"
+                            name="ellipsis-v"
+                            style={{ color: "#299BD7", fontSize: normalize(25) }}
+                        />
+                    </Right>
+                </Header>
                 <View>
-                    <Text>Hello Comm</Text>
+
                 </View>
-            </SafeAreaView>
+            </ScrollView>
         );
     }
 }
