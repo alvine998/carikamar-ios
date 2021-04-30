@@ -54,7 +54,7 @@ export function BotNav() {
           name="Communicate"
           component={Communicate}
           options={{
-            tabBarLabel: "Hubungi",
+            tabBarLabel: "Pesan Masuk",
             tabBarIcon: ({ color }) => (
               <Icon
                 type="FontAwesome5"

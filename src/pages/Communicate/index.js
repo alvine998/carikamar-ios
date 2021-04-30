@@ -13,11 +13,9 @@ class Communicate extends Component {
             <ScrollView>
                 <Header transparent>
                     <Left>
-                        <Text style={{color:'#299BD7', fontSize:normalize(20)}}>Pesanan</Text>
+                        <Text style={{color:'#299BD7', fontSize:normalize(20)}}>Pesan Masuk</Text>
                     </Left>
-                    <Body>
-
-                    </Body>
+                    <Body/>
                     <Right>
                         <Icon
                             type="FontAwesome5"
