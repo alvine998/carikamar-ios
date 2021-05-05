@@ -23,6 +23,7 @@ import TambahItem from './src/pages/Bucket/TambahItem';
 import Communicate from './src/pages/Communicate';
 import Choose from './src/pages/Hotel/Choose';
 import ListHotel from './src/pages/Hotel/ListHotel';
+import Location from './src/pages/Hotel/Location';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -46,7 +47,7 @@ export default function App() {
     //   </Drawer.Navigator>
     // </NavigationContainer>
     <View>
-      <ListHotel/>
+      <Location/>
     </View>
     );
 }
