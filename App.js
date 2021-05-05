@@ -47,7 +47,7 @@ export default function App() {
     //   </Drawer.Navigator>
     // </NavigationContainer>
     <View>
-      <Location/>
+      <ListHotel/>
     </View>
     );
 }
