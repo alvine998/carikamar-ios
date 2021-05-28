@@ -24,6 +24,7 @@ import Communicate from './src/pages/Communicate';
 import Choose from './src/pages/Hotel/Choose';
 import ListHotel from './src/pages/Hotel/ListHotel';
 import Location from './src/pages/Hotel/Location';
+import ProfileHotel from './src/pages/Hotel/ProfileHotel';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -41,7 +42,7 @@ export default function App() {
     // <NavigationContainer>
     //   <Drawer.Navigator initialRouteName="HomeScreen" drawerContent={(props) => <SideBar {...props}/>}>
     //     <Drawer.Screen name="Home" component={BotNav}/>
-    //     <Drawer.Screen name="Bitbucket" component={UserAccount}/>
+    //     <Drawer.Screen name="Bitbucket" component={BucketList}/>
     //     <Drawer.Screen name="My Profile" component={DataAccount}/>
     //     <Drawer.Screen name="Pesanan" component={Communicate}/>
     //   </Drawer.Navigator>
