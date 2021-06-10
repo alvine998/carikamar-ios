@@ -71,7 +71,7 @@ class ListHotel extends Component {
                     </View>
 
                     {/* List hotel */}
-                    <View style={{flex:1}}>
+                    <View>
                         <View style={{padding:normalize(10)}}>
                             <TouchableOpacity>
                                 <View style={{height:normalize(150), borderWidth:1, borderRadius:10, borderColor:'white', backgroundColor:'#dfdfdf'}}>
@@ -142,31 +142,64 @@ class ListHotel extends Component {
                             </TouchableOpacity>
                         </View>
 
-                        
+                        <View style={{padding:normalize(10)}}>
+                            <TouchableOpacity>
+                                <View style={{height:normalize(150), borderWidth:1, borderRadius:10, borderColor:'white', backgroundColor:'#dfdfdf'}}>
+                                    <View style={{flexDirection:'row'}}>
+                                            <View style={{height:normalize(150), flex:1}}>
+                                                <Image source={bg2} style={{height:normalize(148), borderRadius:10, width:normalize(170)}}/>
+                                            </View>
+                                        <View style={{borderWidth:1, alignItems:'center', justifyContent:'center', borderRadius:0, height:normalize(30), width:normalize(80), marginRight:normalize(0), backgroundColor:'orange', borderColor:'orange'}}>
+                                            <Text style={{color:'white'}}>Hotel</Text>
+                                        </View>
+                                        <View style={{marginRight:normalize(9), marginLeft:normalize(10)}}>
+                                            <View style={{flexDirection:'row', paddingTop:normalize(10)}}>
+                                                <Text style={{color:'black'}}>Villa So Long </Text>
+                                                <Icon type="FontAwesome" name="star" style={{color:'orange', fontSize:normalize(20), paddingTop:normalize(5)}}/>
+                                                <Icon type="FontAwesome" name="star" style={{color:'orange', fontSize:normalize(20), paddingTop:normalize(5)}}/>
+                                            </View>
+                                            <Text style={{fontSize:normalize(14)}}>200 m dari Lokasi Anda</Text>
+                                            <View style={{flexDirection:'row'}}>
+                                                <Text style={{fontSize:normalize(24), color:'green'}}>8.3</Text>
+                                                <View>
+                                                    <Text style={{fontSize:normalize(14)}}>Luar Biasa</Text>
+                                                    <Text  style={{fontSize:normalize(14)}}>TripAdvisor 28 ulasan</Text>
+                                                </View>
+                                            </View>
+                                            <Text style={{paddingTop:normalize(10), fontSize:normalize(16)}}>Mulai dari</Text>
+                                            <View style={{flexDirection:'row'}}>
+                                                <Text style={{color:'#299BD7'}}>Rp. 680.000</Text>
+                                                <Text style={{fontSize:normalize(14), padding:normalize(8)}}>Kamar/Malam</Text>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                        </View>
+                        {/* Fixed Bar */}
+                        <View>
+                                <Fab
+                                    active={this.state.active}
+                                    direction="up"
+                                    containerStyle={{}}
+                                    style={{backgroundColor:'#5067FF'}}
+                                    position="bottomRight"
+                                    onPress={() => this.setState({active: !this.state.active})}
+                                >
+                                    <Icon type="FontAwesome" name="share-alt"/>
+                                    <Button style={{ backgroundColor: '#299BD7' }}>
+                                        <Icon type="FontAwesome" name="map"/>
+                                    </Button>
+                                    <Button style={{ backgroundColor: '#299BD7' }}>
+                                        <Icon type="FontAwesome5" name="sliders-h"/>
+                                    </Button>
+                                    <Button style={{ backgroundColor: '#299BD7' }}>
+                                        <Icon type="FontAwesome5" name="home"/>
+                                    </Button>
+                                </Fab>
+                        </View>
                     </View>
                 </View>
-                {/* Fixed Bar */}
-                <View style={{flex:1}}>
-                        <Fab
-                            active={this.state.active}
-                            direction="up"
-                            containerStyle={{}}
-                            style={{backgroundColor:'#5067FF'}}
-                            position="bottomRight"
-                            onPress={() => this.setState({active: !this.state.active})}
-                        >
-                            <Icon type="FontAwesome" name="share-alt"/>
-                            <Button style={{ backgroundColor: '#299BD7' }}>
-                                <Icon type="FontAwesome" name="map"/>
-                            </Button>
-                            <Button style={{ backgroundColor: '#299BD7' }}>
-                                <Icon type="FontAwesome5" name="sliders-h"/>
-                            </Button>
-                            <Button style={{ backgroundColor: '#299BD7' }}>
-                                <Icon type="FontAwesome5" name="home"/>
-                            </Button>
-                        </Fab>
-                    </View>
             </ScrollView>
          );
     }

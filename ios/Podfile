@@ -23,4 +23,6 @@ target 'carikamarios' do
   #  end
   pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
 
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+
 end

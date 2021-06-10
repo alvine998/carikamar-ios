@@ -25,6 +25,7 @@ import Choose from './src/pages/Hotel/Choose';
 import ListHotel from './src/pages/Hotel/ListHotel';
 import Location from './src/pages/Hotel/Location';
 import ProfileHotel from './src/pages/Hotel/ProfileHotel';
+import RoomHotel from './src/pages/Hotel/RoomHotel';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -48,7 +49,7 @@ export default function App() {
     //   </Drawer.Navigator>
     // </NavigationContainer>
     <View>
-      <ListHotel/>
+      <RoomHotel/>
     </View>
     );
 }
