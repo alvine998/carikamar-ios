@@ -5,7 +5,7 @@ import { TextInput, View } from 'react-native';
 import normalize from 'react-native-normalize';
 
 
-const DataTamu = (props) => {
+const Emptybox = (props) => {
     const [value, setValue] = useState("");
     const [email, setEmail] = useState("");
     const [whatsapp, setWhatsapp] = useState("");
@@ -31,12 +31,13 @@ const DataTamu = (props) => {
                     <Right/>
                     <Icon type={"FontAwesome5"} onPress={toggleOn} name={click ? "toggle-on" : "toggle-off"} style={{fontSize:normalize(25), color:'#299BD7'}} />
                 </View>
+    
                 <View style={{flexDirection:'row', alignItems:'center'}}>
                     <Icon type={"FontAwesome5"} name="user" style={{fontSize:normalize(25), color:'#299BD7'}} />
                     <TextInput
                         style={{borderBottomColor:'#808080', borderBottomWidth:1, marginBottom:normalize(10), height:normalize(40), fontSize:normalize(16), marginLeft:normalize(20), width:normalize(280)}}
                         placeholder="Nama Lengkap"
-                        value={click ? props.value : value }
+                        value={value}
                         onChangeText={onPressText}
                     />
                 </View>
@@ -45,7 +46,7 @@ const DataTamu = (props) => {
                     <TextInput
                         style={{borderBottomColor:'#808080', borderBottomWidth:1, marginBottom:normalize(10), height:normalize(40), fontSize:normalize(16), marginLeft:normalize(20), width:normalize(280)}}
                         placeholder="Email@domain.com"
-                        value={click ? props.email : email}
+                        value={email}
                         onChangeText={onPressMail}
                     />
                 </View>
@@ -55,7 +56,7 @@ const DataTamu = (props) => {
                         style={{borderBottomColor:'#808080', borderBottomWidth:1, marginBottom:normalize(10), height:normalize(40), fontSize:normalize(16), marginLeft:normalize(20), width:normalize(280)}}
                         placeholder="+62 "
                         keyboardType="number-pad"
-                        value={click ? props.whatsapp : whatsapp}
+                        value={whatsapp}
                         onChangeText={onPressWhatsapp}
                     />
                 </View>
@@ -64,4 +65,4 @@ const DataTamu = (props) => {
      );
 }
  
-export default DataTamu;
+export default Emptybox;
