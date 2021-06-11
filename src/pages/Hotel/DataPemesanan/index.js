@@ -1,15 +1,19 @@
-import { Body, Header, Icon, Left, Right, Text } from 'native-base';
+import { Body, Button, Content, Header, Icon, Left, Right, Segment, Text } from 'native-base';
 import React, { Component } from 'react';
-import { Dimensions, TouchableOpacity, View } from 'react-native';
+import { Dimensions, Image, KeyboardAvoidingView, TouchableOpacity, View } from 'react-native';
 import normalize from 'react-native-normalize';
+import { roomsolong } from '../../../assets';
+import DataPemesan from '../../../components/DataPemesan';
+import DataTamu from '../../../components/DataTamu';
 
 class DataPemesanan extends Component {
     constructor(props) {
         super(props);
-        this.state = {  };
+        this.state = { check:1 };
     }
     render() {
         const screenheight = Dimensions.get('window').height;
+        const check = this.state.check;
         return (
             <View style={{height:'auto', maxHeight: screenheight}}>
                 <Header transparent>
@@ -50,6 +54,36 @@ class DataPemesanan extends Component {
                             <Text style={{fontSize:normalize(14)}}>Pembayaran</Text>
                         </View>
                     </View>
+                </View>
+
+                <View style={{padding:normalize(10), borderTopColor:'#dfdfdf', borderTopWidth:1}}>
+                    <Text style={{fontSize:normalize(16), fontWeight:'bold'}}>Detail Pemesanan Anda</Text>
+                    <View style={{alignItems:'center', paddingTop:normalize(10)}}>
+                        <TouchableOpacity style={{flexDirection:'row', borderWidth:1,borderColor:'#dfdfdf', borderRadius:10, height:normalize(100),width:'90%', justifyContent:'center', alignItems:'center'}}>
+                            <Image source={roomsolong} style={{height:normalize(80), width:normalize(80), borderRadius:10}} />
+                            <View style={{paddingLeft:normalize(10), paddingRight:normalize(10)}}>
+                                <Text style={{fontSize:normalize(16)}}>Villa So Long Banyuwangi</Text>
+                                <Text style={{fontSize:normalize(16), color:'#808080'}}>Superior Room View Garden</Text>
+                                <Text style={{fontSize:normalize(16), color:'#808080'}}>1 Kamar, 1 Malam, 2 Dewasa</Text>
+                                <Text style={{fontSize:normalize(16), color:'#808080'}}>Check-in Kam, 14 Feb 2021</Text>
+                                <Text style={{fontSize:normalize(16), color:'#808080'}}>Check-out Jum, 15 Feb 2021</Text>
+                            </View>
+                            <Icon type={"FontAwesome5"} name="chevron-down" style={{fontSize:normalize(25), color:'#299BD7'}} />
+                        </TouchableOpacity>
+                    </View>
+                </View>
+
+                <View style={{padding:normalize(10), borderTopColor:'#dfdfdf', borderTopWidth:1}}>
+                    <View style={{flexDirection:'row'}}>
+                        <TouchableOpacity onPress={() => this.setState({check: 1})}>
+                            <Text style={{fontSize:normalize(16), color:'#299BD7'}}>Data Pemesan</Text>
+                        </TouchableOpacity>
+                        <Right/>
+                        <TouchableOpacity onPress={() => this.setState({check: 2})}>
+                            <Text style={{fontSize:normalize(16), color:'#299BD7'}}>Data Tamu</Text>
+                        </TouchableOpacity>
+                    </View>
+                    {check == 1 ? <DataPemesan/> : <DataTamu/>}
                 </View>
             </View>
         );
