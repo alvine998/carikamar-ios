@@ -26,6 +26,7 @@ import ListHotel from './src/pages/Hotel/ListHotel';
 import Location from './src/pages/Hotel/Location';
 import ProfileHotel from './src/pages/Hotel/ProfileHotel';
 import RoomHotel from './src/pages/Hotel/RoomHotel';
+import DataPemesanan from './src/pages/Hotel/DataPemesanan';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -49,7 +50,7 @@ export default function App() {
     //   </Drawer.Navigator>
     // </NavigationContainer>
     <View>
-      <RoomHotel/>
+      <DataPemesanan/>
     </View>
     );
 }

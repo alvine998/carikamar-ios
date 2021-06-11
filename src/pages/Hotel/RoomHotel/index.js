@@ -1,6 +1,6 @@
-import { Body, Button, Card, Container, Header, Icon, Left, Right, Tab, TabHeading, Tabs, Text, Title } from 'native-base';
+import { Body, Button, Card, Container, Content, Header, Icon, Left, Right, Tab, TabHeading, Tabs, Text, Title } from 'native-base';
 import React, { Component } from 'react';
-import { Image, ScrollView, TouchableOpacity, View } from 'react-native';
+import { Dimensions, Image, ScrollView, TouchableOpacity, View } from 'react-native';
 import normalize from 'react-native-normalize';
 import { cup, double_check, refund, wallet,roomsolong,persons, twinbed } from '../../../assets';
 import Tab1 from './Tab1';
@@ -13,8 +13,9 @@ class RoomHotel extends Component {
         this.state = {  };
     }
     render() {
+        const screenheight = Dimensions.get('window').height;
         return (
-        <View>
+        <View style={{height:'auto', maxHeight: screenheight}}>
             <Header transparent>
                 <Left>
                     <Icon type={"FontAwesome5"} name="chevron-left" style={{color:'#299BD7', fontSize:normalize(25)}} />
@@ -28,7 +29,7 @@ class RoomHotel extends Component {
                     </TouchableOpacity>
                 </Right>
             </Header>
-            <View style={{alignItems:'center', justifyContent:'center'}}>
+            <View style={{alignItems:'center', justifyContent:'center', paddingBottom:normalize(10)}}>
                 <View style={{borderRadius:10, height:normalize(35), borderWidth:1, width:normalize(350), backgroundColor:'#22599C', borderColor:'#22599C',alignItems:'center', justifyContent:'center'}}>
                     <Text style={{color:'white', fontSize:normalize(16)}}>Kamis, 14 Feb 2021, 1 Malam  |  1 Dewasa, 1 Kamar</Text>
                 </View>
@@ -100,6 +101,47 @@ class RoomHotel extends Component {
                     <Right/>
                     <View style={{paddingTop:normalize(20)}}>
                         <Text style={{fontSize:normalize(20), color:'#E75A06'}}>Rp 680.000</Text>
+                        <Text style={{fontSize:normalize(16)}}>Harga /kamar/malam</Text>
+                        <View>
+                            <Button full rounded style={{height:normalize(30), backgroundColor:'#22599C'}}>
+                                <Title style={{fontSize:normalize(14)}}>Pilih Kamar</Title>
+                            </Button>
+                        </View>
+                    </View>
+                </View>
+
+                <View style={{height:normalize(50), width:'100%', backgroundColor:'#dfdfdf', alignItems:'center', justifyContent:'center'}}>
+                    <Text style={{fontSize:normalize(14), color:'#299BD7'}}>
+                    Hotel menjamin kebersihan kamar sesuai protokol Kesehatan CHSE
+                    </Text>
+                </View>
+
+                <View style={{flexDirection:'row', padding:normalize(10), alignItems:'center', justifyContent:'center'}}>
+                    <Text style={{fontSize:normalize(18)}}>Superior Room View Garden</Text>
+                    <Right/>
+                    <Image source={double_check} style={{height:normalize(40), width:normalize(40)}}/>  
+                </View>
+                <View style={{flexDirection:'row', padding:normalize(10)}}>
+                    <View>
+                        <View style={{flexDirection:'row'}}>
+                            <Image source={twinbed} style={{height:normalize(30), width:normalize(30)}} />
+                            <View style={{justifyContent:'center'}}>
+                                <Text style={{fontSize:normalize(16), color:'#299BD7'}}> Double Bed/ Twin Bed</Text>
+                            </View>
+                        </View>
+                        <View style={{flexDirection:'row'}}>
+                            <Image source={persons} style={{height:normalize(30), width:normalize(30)}} />
+                            <View style={{justifyContent:'center'}}>
+                                <Text style={{fontSize:normalize(16), color:'#299BD7'}}> 2 Orang</Text>
+                            </View>
+                        </View>
+                        <TouchableOpacity style={{paddingTop:normalize(20)}}>
+                            <Text style={{fontSize:normalize(16), color:'#299BD7'}}>Lihat Detail Kamar</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <Right/>
+                    <View style={{paddingTop:normalize(20)}}>
+                        <Text style={{fontSize:normalize(20), color:'#E75A06'}}>Rp 720.000</Text>
                         <Text style={{fontSize:normalize(16)}}>Harga /kamar/malam</Text>
                         <View>
                             <Button full rounded style={{height:normalize(30), backgroundColor:'#22599C'}}>
