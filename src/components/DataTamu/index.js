@@ -38,6 +38,7 @@ const DataTamu = (props) => {
                         placeholder="Nama Lengkap"
                         value={click ? props.value : value }
                         onChangeText={onPressText}
+                        editable={click == true ? false : true}
                     />
                 </View>
                 <View style={{flexDirection:'row', alignItems:'center'}}>
@@ -47,6 +48,7 @@ const DataTamu = (props) => {
                         placeholder="Email@domain.com"
                         value={click ? props.email : email}
                         onChangeText={onPressMail}
+                        editable={click == true ? false : true}
                     />
                 </View>
                 <View style={{flexDirection:'row', alignItems:'center'}}>
@@ -57,6 +59,7 @@ const DataTamu = (props) => {
                         keyboardType="number-pad"
                         value={click ? props.whatsapp : whatsapp}
                         onChangeText={onPressWhatsapp}
+                        editable={click == true ? false : true}
                     />
                 </View>
             </View>

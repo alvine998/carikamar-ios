@@ -28,14 +28,17 @@ import refund from './icons/ICON_HOTEL/BIRU_MUDA/refund.png';
 import roomsolong from './images/room_solong.jpg';
 import twinbed from './icons/ICON_HOTEL/BIRU_MUDA/twinbed.png';
 import persons from './icons/ICON_HOTEL/BIRU_MUDA/persons.png';
-
+import building_full from './icons/ICON_HOTEL/BIRU_MUDA/building_full.png';
+import no_smoking from './icons/ICON_HOTEL/BIRU_MUDA/no_smoking.png';
 
 export {
 	logo,
 	swiming,
+	no_smoking,
     double_check,
     twinbed,
     persons,
+	building_full,
     roomsolong,
     wallet,
     cup,
