@@ -1,9 +1,9 @@
 import { DrawerView } from '@react-navigation/drawer';
 import { Body, Button, Container, Footer, FooterTab, Header, Icon, Left, Right } from 'native-base';
 import React, { Component } from 'react';
-import { Image, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Dimensions, Image, ImageBackground, Linking, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import normalize from 'react-native-normalize';
-import MapView from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 import { icn1, solong1, solong2, eat, swiming, wifi } from '../../../assets';
 import FooterPrice from '../../../components/FooterPrice';
 
@@ -16,9 +16,9 @@ class ProfileHotel extends Component {
     }
 
     render() {
+        const screenheight = Dimensions.get('window').height;
         return (
-            <View style={{flex:1}}>
-                <View style={{height:normalize(530)}}>
+            <View style={{ height: 'auto', maxHeight: screenheight }}>
                     <ScrollView>
                         {/* Ini Header sekaligus foto" */}
                         <ImageBackground source={solong1} style={{height:normalize(300)}}>
@@ -121,17 +121,27 @@ class ProfileHotel extends Component {
                             </View>
 
                             {/* Ini Map Lokasi */}
-                            <View>
+                            <View pointerEvents="none">
                                 <View style={{borderBottomWidth:1, borderBottomColor:'#dfdfdf', paddingTop:normalize(10)}}/>
                                 <Text style={{fontWeight:'bold', color:'black'}}>Lokasi</Text>
                                 <MapView
                                     initialRegion={{
                                         latitude: 37.78825,
                                         longitude: -122.4324,
-                                        latitudeDelta: 0.0922,
-                                        longitudeDelta: 0.0421,
+                                        latitudeDelta: 0.009,
+                                        longitudeDelta: 0.009,
                                     }}
-                                />
+
+                                    style={{width:'100%', height:normalize(200)}}
+                                >
+                                    <Marker style={{...StyleSheet.absoluteFillObject}} coordinate={{latitude: 37.78825,longitude: -122.4324}} />
+                                </MapView>
+                                
+                            </View>
+                            <View style={{paddingTop:normalize(10), paddingLeft:normalize(30), paddingRight:normalize(30)}}>
+                                <Button full rounded success style={{height:normalize(40)}} onPress={()=>Linking.openURL('https://www.google.co.id/maps/place/Rumah+Makan+Padang+Paliat/@-6.1095268,106.8770197,17z/data=!3m1!4b1!4m5!3m4!1s0x2e6a1f3177e45ee7:0x1513b297413765a5!8m2!3d-6.1095321!4d106.8792084')}>
+                                    <Text style={{color:'white'}}>Lihat Peta</Text>
+                                </Button>
                             </View>
 
                             {/* Ini Informasi */}
@@ -156,7 +166,6 @@ class ProfileHotel extends Component {
                             </View>
                         </View>
                     </ScrollView>
-                </View>
                 <FooterPrice/>
             </View>
         );

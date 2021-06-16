@@ -29,6 +29,8 @@ import RoomHotel from './src/pages/Hotel/RoomHotel';
 import DataPemesanan from './src/pages/Hotel/DataPemesanan';
 import RincianPemesanan from './src/pages/Hotel/RincianPemesan';
 import Pembayaran from './src/pages/Hotel/Pembayaran';
+import PopupSuccess from './src/components/PopupSuccess';
+import AturKhusus from './src/pages/Hotel/DataPemesanan/AturKhusus';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -52,7 +54,7 @@ export default function App() {
     //   </Drawer.Navigator>
     // </NavigationContainer>
     <View>
-      <Pembayaran/>
+      <AturKhusus/>
     </View>
     );
 }

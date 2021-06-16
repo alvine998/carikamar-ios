@@ -30,10 +30,17 @@ import twinbed from './icons/ICON_HOTEL/BIRU_MUDA/twinbed.png';
 import persons from './icons/ICON_HOTEL/BIRU_MUDA/persons.png';
 import building_full from './icons/ICON_HOTEL/BIRU_MUDA/building_full.png';
 import no_smoking from './icons/ICON_HOTEL/BIRU_MUDA/no_smoking.png';
+import mandiri from './icons/logobank/MANDIRI.png';
+import BCA from './icons/logobank/BCA.jpg';
+import BNI from './icons/logobank/BNI.png';
+
 
 export {
 	logo,
 	swiming,
+	mandiri,
+	BCA,
+	BNI,
 	no_smoking,
     double_check,
     twinbed,
