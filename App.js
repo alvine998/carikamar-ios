@@ -31,6 +31,11 @@ import RincianPemesanan from './src/pages/Hotel/RincianPemesan';
 import Pembayaran from './src/pages/Hotel/Pembayaran';
 import PopupSuccess from './src/components/PopupSuccess';
 import AturKhusus from './src/pages/Hotel/DataPemesanan/AturKhusus';
+import SettingsOption from './src/pages/Settings';
+import InfoAkun from './src/pages/Settings/InfoAkun';
+import Keamanan from './src/pages/Settings/Keamanan';
+import Lokasi from './src/pages/Settings/Lokasi';
+import Bahasa from './src/pages/Settings/Bahasa';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -54,7 +59,7 @@ export default function App() {
     //   </Drawer.Navigator>
     // </NavigationContainer>
     <View>
-      <AturKhusus/>
+      <Bahasa/>
     </View>
     );
 }
