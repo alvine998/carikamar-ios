@@ -36,6 +36,7 @@ class Keamanan extends Component {
                         </TouchableOpacity>
                     </Right>
                 </Header>
+                <View style={{borderBottomWidth:1, borderBottomColor:'#dfdfdf', paddingTop:normalize(0)}}/>
 
                 <View style={{padding:normalize(10)}}>
                     <Text style={{fontWeight:'bold'}}>PASSWORD</Text>

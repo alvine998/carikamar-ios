@@ -36,6 +36,10 @@ import InfoAkun from './src/pages/Settings/InfoAkun';
 import Keamanan from './src/pages/Settings/Keamanan';
 import Lokasi from './src/pages/Settings/Lokasi';
 import Bahasa from './src/pages/Settings/Bahasa';
+import Notifikasi from './src/pages/Settings/Notifikasi';
+import Kebijakan from './src/pages/Settings/Kebijakan';
+import Testing from './src/pages/Testing';
+
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -59,7 +63,7 @@ export default function App() {
     //   </Drawer.Navigator>
     // </NavigationContainer>
     <View>
-      <Bahasa/>
+      <Testing/>
     </View>
     );
 }

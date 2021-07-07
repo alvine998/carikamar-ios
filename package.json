@@ -27,6 +27,7 @@
     "react-native-gesture-handler": "~1.8.0",
     "react-native-google-drive-api-wrapper": "^1.4.0",
     "react-native-google-places-autocomplete": "^2.2.0",
+    "react-native-inappbrowser-reborn": "^3.5.1",
     "react-native-maps": "^0.28.0",
     "react-native-normalize": "^1.0.1",
     "react-native-paper": "^4.7.2",

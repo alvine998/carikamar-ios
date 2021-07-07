@@ -29,6 +29,7 @@ class Lokasi extends Component {
 
                     </Right>
                 </Header>
+                <View style={{borderBottomWidth:1, borderBottomColor:'#dfdfdf', paddingTop:normalize(0)}}/>
 
                 <View style={{padding:normalize(20)}}>
                     <View style={{flexDirection:'row', alignItems:'center'}}>

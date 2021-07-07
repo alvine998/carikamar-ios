@@ -25,6 +25,7 @@ class Bahasa extends Component {
 
                     </Right>
                 </Header>
+                <View style={{borderBottomWidth:1, borderBottomColor:'#dfdfdf', paddingTop:normalize(0)}}/>
 
                 <View style={{padding:normalize(20)}}>
                     <Text style={{fontWeight:'bold'}}>PILIH BAHASA :</Text>
