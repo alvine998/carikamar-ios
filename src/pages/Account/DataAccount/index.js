@@ -116,7 +116,7 @@ class DataAccount extends Component {
                                 </TouchableWithoutFeedback>
                                 <View style={{paddingTop:normalize(10)}} />
                                 <TextInput
-                                    placeholder="Nama Lengkap"
+                                    placeholder="Alamat"
                                     style={styles.txtinput}
                                 />
                             </View>

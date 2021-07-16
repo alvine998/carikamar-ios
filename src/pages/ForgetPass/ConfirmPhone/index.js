@@ -53,6 +53,7 @@ class ConfirmPhone extends Component {
                             <TextInput
                                 editable={true}
                                 maxLength={12}
+                                keyboardType="number-pad"
                                 value={this.state.phone}
                                 onChange={this.handlePhone}
                                 style={styles.border2}

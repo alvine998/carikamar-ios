@@ -26,7 +26,7 @@ import {
   ToastAndroid,
 } from "react-native";
 import normalize from "react-native-normalize";
-import { avva, banner, header_logo, hotel, logo } from "../../assets";
+import { avva, banner, bromo, festival, header_logo, hotel, logo } from "../../assets";
 import { BotNav } from "../../components/BotNav";
 import Sidebar from "../../components/Sidebar";
 import { styles } from "./style";
@@ -205,7 +205,9 @@ class HomeScreen extends Component  {
             <View style={{padding:normalize(20)}}>
               <Text style={{color:'black', fontWeight:'bold'}}>Partner Kami : </Text>
               <View style={{flexDirection:'row'}}>
-
+                <View>
+                  <Image source={header_logo} style={{width:normalize(200), height:normalize(50)}} />
+                </View>
               </View>
             </View>
           </View>

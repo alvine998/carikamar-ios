@@ -69,49 +69,59 @@ class VerifyEmail extends Component {
                                 autoFocus={true}
                                 keyboardType="numeric"
                                 value={this.state.one}
-                                onChange={this.handleOne}
+                                onChangeText={this.handleOne}
                                 style={styles.border}
-                                
+                                blurOnSubmit={false}
+                                onSubmitEditing={() => {this.handleTwo.focus()}}
                             />
                             <View style={styles.space} />
                             <TextInput
                                 maxLength={1}
                                 keyboardType="numeric"
                                 value={this.state.two}
-                                onChange={this.handleTwo}
+                                onChangeText={this.handleTwo}
                                 style={styles.border}
+                                ref={(input) => {this.handleTwo = input}}
+                                onSubmitEditing={() => {this.handleThree.focus()}}
                             />
                             <View style={styles.space} />
                             <TextInput
                                 maxLength={1}
                                 keyboardType="numeric"
                                 value={this.state.three}
-                                onChange={this.handleThree}
+                                onChangeText={this.handleThree}
                                 style={styles.border}
+                                ref={(input) => {this.handleThree = input}}
+                                onSubmitEditing={() => {this.handleFour.focus()}}
                             />
                             <View style={styles.space} />
                             <TextInput
                                 maxLength={1}
                                 keyboardType="numeric"
                                 value={this.state.four}
-                                onChange={this.handleFour}
+                                onChangeText={this.handleFour}
                                 style={styles.border}
+                                ref={(input) => {this.handleFour = input}}
+                                onSubmitEditing={() => {this.handleFive.focus()}}
                             />
                             <View style={styles.space} />
                             <TextInput
                                 maxLength={1}
                                 keyboardType="numeric"
                                 value={this.state.five}
-                                onChange={this.handleFive}
+                                onChangeText={this.handleFive}
                                 style={styles.border}
+                                ref={(input) => {this.handleFive = input}}
+                                onSubmitEditing={() => {this.handleSix.focus()}}
                             />
                             <View style={styles.space} />
                             <TextInput
                                 maxLength={1}
                                 keyboardType="numeric"
                                 value={this.state.six}
-                                onChange={this.handleSix}
+                                onChangeText={this.handleSix}
                                 style={styles.border}
+                                ref={(input) => {this.handleSix = input}}
                             />
                         </View>
                         <View style={styles.time}>

@@ -1,6 +1,6 @@
 import { Body, Button, Header, Icon, Label, Left, Right } from 'native-base';
 import React, { Component } from 'react';
-import { Image, Text, TextInput, View } from 'react-native';
+import { Dimensions, Image, KeyboardAvoidingView, ScrollView, Text, TextInput, View } from 'react-native';
 import normalize from 'react-native-normalize';
 import { reset } from '../../../assets';
 import { styles } from './style';
@@ -24,8 +24,10 @@ class ResetPass extends Component {
         this.setState({showPass: !this.state.showPass})
     }
     render() {
+        const screenheight = Dimensions.get('window').height;
+
         return (
-            <View>
+            <ScrollView style={{height:'auto', maxHeight: screenheight}}>
                 <Header transparent>
                     <Left>
                         <Icon type="FontAwesome5" name="chevron-left"/>
@@ -35,7 +37,6 @@ class ResetPass extends Component {
                     </Body>
                     <Right/>
                 </Header>
-                <View>
                     <View style={styles.center}>
                         <Image source={reset} style={styles.images} />
                         <Text>Ganti Password</Text>
@@ -62,8 +63,7 @@ class ResetPass extends Component {
                             </View>
                         </View>
                     </View>
-                </View>
-            </View>
+            </ScrollView>
         );
     }
 }

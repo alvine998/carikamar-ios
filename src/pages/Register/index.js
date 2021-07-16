@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import {Image, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import {Alert, Image, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { fb, google, logo } from '../../assets';
 import normalize from 'react-native-normalize';
 import { Body, Button, CheckBox, ListItem } from 'native-base';
 import RegistrasiAll from "../../services/regist.service";
+import axios from 'axios';
 
 class Register extends Component {
     constructor(props) {
@@ -24,21 +25,35 @@ class Register extends Component {
          this.handlePonsel = this.handlePonsel.bind(this);
          this.showthePass = this.showthePass.bind(this);
          this.toggleCheck = this.toggleCheck.bind(this);
-         this.saveData = this.saveData.bind(this);
-         this.newData = this.newData.bind(this);
     }
 
     handleEmail = (event) => {
-        this.setState({email: event.target.email})
+        this.setState({email: event})
     }
     handlePass = (event) => {
-        this.setState({password: event.target.password})
+        this.setState({password: event})
     }
     handleName = (event) => {
-        this.setState({name: event.target.name})
+        this.setState({name: event})
     }
     handlePonsel = (event) => {
-        this.setState({ponsel: event.target.ponsel})
+        this.setState({ponsel: event})
+    }
+
+    handleSave = () => {
+        axios.post('http://10.0.2.2:3000/users', {
+            name: this.state.name,
+            email: this.state.email,
+            password: this.state.password,
+            ponsel: this.state.ponsel
+        })
+        .then(res => {
+            console.log(res);
+            console.log(res.data);
+            Alert.alert("Data Berhasil Disimpan")
+            this.setState({name:'', email:'', password:'', ponsel:''})
+        })
+        .catch(err => console.log("api error: ", err.message))
     }
 
     toggleCheck = () => {
@@ -49,63 +64,18 @@ class Register extends Component {
         this.setState({showPass: !this.state.showPass, isSelectPass: !this.state.isSelectPass})
     }
 
-    saveData(){
-        var data = {
-            name: this.state.name,
-            ponsel: this.state.ponsel,
-            email: this.state.email,
-            password: this.state.password
-        };
-        console.log(data);
-
-        RegistrasiAll.createData(data)
-            .then(res => {
-                this.setState({
-                    id: res.data.id,
-                    name: res.data.name,
-                    ponsel: res.data.ponsel,
-                    email: res.data.email,
-                    password: res.data.password,
-
-                    submitted: true
-                });
-                console.log(res.data);
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    }
-
-    newData(){
-        this.setState({
-            id:null,
-            name:'',
-            ponsel:'',
-            email:'',
-            password:'',
-
-            submitted: false
-        })
-    }
+    
     render() {
         return (
             <ScrollView>
-            <View style={{padding:normalize(50), paddingTop:normalize(100)}}>
-                {this.state.submitted ? (
-                    <View>
-                        <Text>Success Registrasi</Text>
-                        <Button full rounded primary onPress={this.newData}>
-                            <Text>Add</Text>
-                        </Button>
-                    </View>
-                ) : (
+            <View style={{padding:normalize(50), paddingTop:normalize(20)}}>
                 <View style={{alignItems:'center', justifyContent:'center'}}>
                     <Image source={logo} style={{height:normalize(150), width:normalize(150)}} />
                     <View style={{paddingTop:normalize(20)}}>
                         <TextInput
                             placeholder="Nama Lengkap"
                             value={this.state.name}
-                            onChange={this.handleName}
+                            onChangeText={this.handleName}
                             style={{
                                 borderWidth:1,
                                 borderRadius:40,
@@ -195,7 +165,6 @@ class Register extends Component {
                         </View>
                     </View>
                 </View>
-                )}
             </View>
             </ScrollView>
         );

@@ -8,7 +8,8 @@ export const styles = StyleSheet.create({
     },
     center:{
         alignItems:'center',
-        justifyContent:'center'
+        justifyContent:'center',
+        paddingBottom:normalize(20)
     },
     border:{
         borderWidth:1,
@@ -21,7 +22,8 @@ export const styles = StyleSheet.create({
     },
     btnContainer:{
         height:normalize(50),
-        paddingTop:normalize(20)
+        paddingTop:normalize(20),
+        paddingBottom:normalize(20)
     },
     btnInside:{
         backgroundColor:'#299BD7',

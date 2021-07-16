@@ -162,7 +162,7 @@ class BucketKoleksi extends Component {
 
               <View style={{paddingTop:normalize(20), paddingLeft:normalize(50), paddingRight:normalize(50)}}>
                   <Button full rounded transparent style={{backgroundColor:'#299BD7', height:normalize(40)}}>
-                    <Text>Simpan</Text>
+                    <Text style={{color:'white'}}>Simpan</Text>
                   </Button>
               </View>
         </View>

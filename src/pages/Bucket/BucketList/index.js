@@ -12,12 +12,12 @@ class BucketList extends Component {
     render() {
         return (
             <View>
-                <Header>
+                <Header transparent>
                     <Left>
                         <Icon type="FontAwesome5" name="chevron-left" style={{color:'#299BD7', fontSize:normalize(25)}} />
                     </Left>
                     <Body>
-                        <Text>Bucket List</Text>
+                        <Text style={{color:'#299BD7'}}>Bucket List</Text>
                     </Body>
                     <Right>
                         <Icon type="FontAwesome5" name="ellipsis-v" style={{color:'#299BD7', fontSize:normalize(25)}} />

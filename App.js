@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import ConfirmEmail from './src/pages/ForgetPass/ConfirmEmail';
 import ConfirmPhone from './src/pages/ForgetPass/ConfirmPhone';
 import VerifyEmail from './src/pages/ForgetPass/VerifyEmail';
@@ -44,16 +44,23 @@ import Testing from './src/pages/Testing';
 export default function App() {
   const Stack = createStackNavigator();
   const Drawer = createDrawerNavigator();
+
+  // const HomeStackNavigator = () => {
+  //   return
+  //   <Stack.Navigator>
+  //     <Stack.Screen name="Login" component={Login} />
+  //     <Stack.Screen name="Register" component={Register}/>
+  //     <Stack.Screen name="ConfirmEmail" component={ConfirmEmail}/>
+  //     <Stack.Screen name="ConfirmPhone" component={ConfirmPhone}/>
+  //     <Stack.Screen name="VerifyEmail" component={VerifyEmail}/>
+  //   </Stack.Navigator>
+  // }
+
+  // const Navigation = () => {
+  //   return
+
+  // }
   return (
-    // <NavigationContainer>
-    //   <Stack.Navigator initialRouteName={HomeScreen}>
-    //     <Stack.Screen name="Login" component={Login} />
-    //     <Stack.Screen name="Register" component={Register}/>
-    //     <Stack.Screen name="ConfirmEmail" component={ConfirmEmail}/>
-    //     <Stack.Screen name="ConfirmPhone" component={ConfirmPhone}/>
-    //     <Stack.Screen name="VerifyEmail" component={VerifyEmail}/>
-    //   </Stack.Navigator>
-    // </NavigationContainer>
     // <NavigationContainer>
     //   <Drawer.Navigator initialRouteName="HomeScreen" drawerContent={(props) => <SideBar {...props}/>}>
     //     <Drawer.Screen name="Home" component={BotNav}/>
@@ -62,8 +69,10 @@ export default function App() {
     //     <Drawer.Screen name="Pesanan" component={Communicate}/>
     //   </Drawer.Navigator>
     // </NavigationContainer>
-    <View>
-      <Testing/>
-    </View>
+    
+
+    <ScrollView>
+      <ProfileHotel/>
+    </ScrollView>
     );
 }

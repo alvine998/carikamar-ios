@@ -20,7 +20,7 @@ class ConfirmEmail extends Component {
     }
     render() {
         return (
-            <View>
+            <View style={{paddingBottom:normalize(20)}}>
                 <KeyboardAvoidingView behavior="padding">
                 <Header transparent>
                     <Left>

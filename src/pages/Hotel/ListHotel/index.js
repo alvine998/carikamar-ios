@@ -2,7 +2,7 @@ import { Body, Button, Fab, Header, Icon, Left, Right } from 'native-base';
 import React, { Component } from 'react';
 import { Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import normalize from 'react-native-normalize';
-import { bg2, bg5, hotel } from '../../../assets';
+import { bg2, bg5, hotel, solong1, solong2, solong3 } from '../../../assets';
 
 class ListHotel extends Component {
     constructor(props) {
@@ -77,7 +77,7 @@ class ListHotel extends Component {
                                 <View style={{height:normalize(150), borderWidth:1, borderRadius:10, borderColor:'white', backgroundColor:'#dfdfdf'}}>
                                     <View style={{flexDirection:'row'}}>
                                             <View style={{height:normalize(150), flex:1}}>
-                                                <Image source={bg2} style={{height:normalize(148), borderRadius:10, width:normalize(170)}}/>
+                                                <Image source={solong1} style={{height:normalize(148), borderRadius:10, width:normalize(170)}}/>
                                             </View>
                                         <View style={{borderWidth:1, alignItems:'center', justifyContent:'center', borderRadius:0, height:normalize(30), width:normalize(80), marginRight:normalize(0), backgroundColor:'orange', borderColor:'orange'}}>
                                             <Text style={{color:'white'}}>Hotel</Text>
@@ -112,7 +112,7 @@ class ListHotel extends Component {
                                 <View style={{height:normalize(150), borderWidth:1, borderRadius:10, borderColor:'white', backgroundColor:'#dfdfdf'}}>
                                     <View style={{flexDirection:'row'}}>
                                             <View style={{height:normalize(150), flex:1}}>
-                                                <Image source={bg2} style={{height:normalize(148), borderRadius:10, width:normalize(170)}}/>
+                                                <Image source={solong2} style={{height:normalize(148), borderRadius:10, width:normalize(170)}}/>
                                             </View>
                                         <View style={{borderWidth:1, alignItems:'center', justifyContent:'center', borderRadius:0, height:normalize(30), width:normalize(80), marginRight:normalize(0), backgroundColor:'orange', borderColor:'orange'}}>
                                             <Text style={{color:'white'}}>Hotel</Text>
@@ -147,7 +147,7 @@ class ListHotel extends Component {
                                 <View style={{height:normalize(150), borderWidth:1, borderRadius:10, borderColor:'white', backgroundColor:'#dfdfdf'}}>
                                     <View style={{flexDirection:'row'}}>
                                             <View style={{height:normalize(150), flex:1}}>
-                                                <Image source={bg2} style={{height:normalize(148), borderRadius:10, width:normalize(170)}}/>
+                                                <Image source={solong3} style={{height:normalize(148), borderRadius:10, width:normalize(170)}}/>
                                             </View>
                                         <View style={{borderWidth:1, alignItems:'center', justifyContent:'center', borderRadius:0, height:normalize(30), width:normalize(80), marginRight:normalize(0), backgroundColor:'orange', borderColor:'orange'}}>
                                             <Text style={{color:'white'}}>Hotel</Text>

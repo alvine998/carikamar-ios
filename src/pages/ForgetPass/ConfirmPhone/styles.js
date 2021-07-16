@@ -23,9 +23,8 @@ export const styles = StyleSheet.create ({
         height:normalize(50),
         width:normalize(150),
         borderRadius:10,
-        textAlign:'center',
         color:'black',
-        paddingLeft:normalize(20),
+        paddingLeft:normalize(10),
         backgroundColor:'#dfdfdf'
     },
     btnInside:{

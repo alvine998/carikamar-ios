@@ -34,9 +34,19 @@ import mandiri from './icons/logobank/MANDIRI.png';
 import BCA from './icons/logobank/BCA.jpg';
 import BNI from './icons/logobank/BNI.png';
 import successfull from './icons/successfull.png';
+import festival from './images/Festival.png';
+import bromo from './images/Gunung_Bromo.png';
+import kawah from './images/kawah_ijen.png';
+import papuma from './images/pantai_papuma.png';
+import bangsring from './images/bangsring.png';
 
 export {
 	logo,
+	festival,
+	bromo,
+	kawah,
+	papuma,
+	bangsring,
 	swiming,
 	successfull,
 	mandiri,
