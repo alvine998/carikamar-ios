@@ -14,6 +14,7 @@ class Login extends Component {
          };
     }
     render() {
+        const navigation = this.props;
         return (
             <View style={{paddingTop:normalize(70)}}>
                 <View style={{alignItems:'center', justifyContent:'center'}}>
@@ -50,7 +51,7 @@ class Login extends Component {
                         <View style={{paddingTop:normalize(10)}}/>
                         <Text style={{color:'#299BD7', fontSize:normalize(15), textAlign:'center'}}>Lupa Password?</Text>
                         <View style={{paddingTop:normalize(15), alignItems:'center', justifyContent:'center'}}>
-                            <Button full rounded primary style={{backgroundColor:'#299BD7', height:normalize(35)}}>
+                            <Button full rounded primary onPress={() => this.props.navigation.navigate('Home')} style={{backgroundColor:'#299BD7', height:normalize(35)}}>
                                 <Text style={{color:'white', fontSize:normalize(20)}}>Masuk</Text>
                             </Button>
                         </View>
